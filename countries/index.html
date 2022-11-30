@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container pt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div
+            class="alert alert-light text-center mb-5"
+            style="background-color: #fafafa;"
+          >
+            <h1 class="mt-n5 display-4">🌎</h1>
+            <h2>Около света</h2>
+          </div>
+          <section class="mb-5">
+            <h3 class="mb-4">🔍 Търсене</h3>
+            <form id="search-form" class="mb-4">
+              <div class="form-row align-items-center">
+                <div class="col">
+                  <label class="sr-only" for="inlineFormInput">Name</label>
+                  <input
+                    type="search"
+                    name="country"
+                    class="form-control"
+                    id="inlineFormInput"
+                    placeholder="Въведи име на държава..."
+                  />
+                </div>
+                <div class="col-auto">
+                  <button type="submit" class="btn btn-warning">
+                    🕵️‍♂️ Започни търсене
+                  </button>
+                </div>
+              </div>
+            </form>
+            <div id="search-result-list"></div>
+          </section>
+          <hr />
+          <section class="mb-5 mt-4">
+            <div class="d-flex mb-4 justify-content-between align-items-center">
+              <div class="d-flex align-items-center">
+                <h2 class="mr-3">🗺 Списък с държави</h2>
+              </div>
+              <div class="btn-group countries-list-switch" role="group" aria-label="Basic example">
+                <button
+                  data-region="Africa"
+                  type="button"
+                  class="btn btn-sm btn-light"
+                >
+                  Африка
+                </button>
+                <button
+                  data-region="Americas"
+                  type="button"
+                  class="btn btn-sm btn-light"
+                >
+                  Америка
+                </button>
+                <button
+                  data-region="Asia"
+                  type="button"
+                  class="btn btn-sm btn-light"
+                >
+                  Азия
+                </button>
+                <button
+                  data-region="Europe"
+                  type="button"
+                  class="btn btn-sm btn-light active"
+                >
+                  Европа
+                </button>
+              </div>
+            </div>
+            <div id="countries-list"></div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <div id="templates">
+      <div id="country-template" class="d-none card mb-3">
+        <div class="row no-gutters">
+          <div class="col-md-4 p-4">
+            <div class="border rounded">
+              <img
+                src=""
+                class="card-img country-flag"
+                alt="..."
+              />
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title mb-2 country-name"></h5>
+              <div class="row">
+                <div class="col">
+                  <small class="text-info">Столица:</small>
+                  <p class="card-text mb-1 country-capital"></p>
+                </div>
+                <div class="col">
+                  <small class="text-info">Население:</small>
+                  <p class="card-text country-population"></p>
+                </div>
+              </div>
+              <small class="text-info">Регион:</small>
+              <p class="card-text country-region"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
